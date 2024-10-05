@@ -1,10 +1,49 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 <body>
-    <p>page home</p>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <ul class="navbar">
+                    <li><a href="#">Магазин</a></li>
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Корзина</a></li>
+                    <li><a href="#">Войти</a></li>
+                    <li><a href="#">Мой профиль</a></li>
+                    <li class="dropdown">
+                        <a href="#">Каталог</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Категория 1</a></li>
+                            <li><a href="#">Категория 2</a></li>
+                            <li><a href="#">Категория 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form action="#" method="GET" class="search-form">
+                    <input type="text" name="query" placeholder="Поиск товаров">
+                    <button type="submit">Поиск</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Добро пожаловать в наш магазин!</h1>
+        <p>Здесь будет основной контент.</p>
+    </main>
+
+    <footer>
+        <p>© 2024 Магазин</p>
+    </footer>
+
+<script src="{% static 'main/scripts.js' %}"></script>
 </body>
 </html>
