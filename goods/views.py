@@ -3,18 +3,23 @@ from django.shortcuts import render
 
 
 def catalog(request) -> HttpResponse:
-    context: dict[str:str] = {
-        'title': 'Federico - Главная',
-         'content': 'Добро пожаловать в наш магазин!',
+    context: dict = {
+        'title': 'Каталог',
+        'goods': [
+            {
+        'name': 'Название товара',
+        'description': 'Описание',
+        'image': '',
+        'price': 150
+    }
+        ],
     }
 
     return render(request, 'goods/catalog.html', context)
 
 
 def product(request) -> HttpResponse:
-    context: dict[str:str] = {
-        'title': 'Federico - О нас',
-        'content': 'Информация о магазине',
-        'text': 'Текст'
+    context: dict = {
+        'title': 'название товара'
     }
     return render(request, 'goods/product.html', context)

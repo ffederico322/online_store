@@ -5,7 +5,7 @@ from django.shortcuts import render
 def index(request) -> HttpResponse:
     context: dict[str:str] = {
         'title': 'Federico - Главная',
-         'content': 'Добро пожаловать в наш магазин!',
+        'content': 'Добро пожаловать в наш магазин!',
     }
 
     return render(request, 'main/index.html', context)
