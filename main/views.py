@@ -3,11 +3,21 @@ from django.shortcuts import render
 
 
 def index(request) -> HttpResponse:
-    return render(request, 'main/index.html')
+    context: dict[str:str] = {
+        'title': 'Federico - Главная',
+         'content': 'Добро пожаловать в наш магазин!',
+    }
+
+    return render(request, 'main/index.html', context)
 
 
 def about(request) -> HttpResponse:
-    return render(request, 'main/about.html')
+    context: dict[str:str] = {
+        'title': 'Federico - О нас',
+        'content': 'Информация о магазине',
+        'text': 'Текст'
+    }
+    return render(request, 'main/about.html', context)
 
 
 
