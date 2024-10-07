@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+	    <link rel="stylesheet" href="{% static 'goods/product.css' %}">
+{% endblock %}
+
+{% block product %}
+    <main>
+        <div class="product-details">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/400" alt="Название продукта">
+            </div>
+            <div class="product-info">
+                <h1>Название продукта</h1>
+                <p class="price">Цена: 2500 руб.</p>
+                <p class="description">
+                    Здесь находится описание товара. Оно может включать информацию о его характеристиках, особенностях использования, а также других деталях.
+                </p>
+                <button class="add-to-cart">Добавить в корзину</button>
+            </div>
+        </div>
+    </main>
+{% endblock %}

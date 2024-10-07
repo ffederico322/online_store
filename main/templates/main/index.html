@@ -1,6 +1,9 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+{% endblock %}
 
 {% block content %}
     <main>
@@ -9,3 +12,8 @@
     </main>
 {% endblock %}
 
+{% block footer %}
+    <footer>
+        <p>© 2024 Магазин</p>
+    </footer>
+{% endblock %}

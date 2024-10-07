@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+	    <link rel="stylesheet" href="{% static 'goods/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+        <h1>Каталог товаров</h1>
+        <section class="categories">
+            <h2>Категории</h2>
+            <ul>
+                <li><a href="#">Категория 1</a></li>
+                <li><a href="#">Категория 2</a></li>
+                <li><a href="#">Категория 3</a></li>
+                <li><a href="#">Категория 4</a></li>
+            </ul>
+        </section>
+
+        <section class="products">
+            <h2>Товары</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Товар 1">
+                    <h3>Товар 1</h3>
+                    <p>Цена: 1000 руб.</p>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Товар 2">
+                    <h3>Товар 2</h3>
+                    <p>Цена: 1500 руб.</p>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Товар 3">
+                    <h3>Товар 3</h3>
+                    <p>Цена: 2000 руб.</p>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Товар 4">
+                    <h3>Товар 4</h3>
+                    <p>Цена: 2500 руб.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
