@@ -7,7 +7,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     slug = models.SlugField()
-    name = models.CharField()
+    name = models.CharField(max_length=255)
     description = models.CharField()
     image = models.FileField()
     amount = models.IntegerField()
