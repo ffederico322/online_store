@@ -15,7 +15,7 @@ def about(request) -> HttpResponse:
     context: dict[str:str] = {
         'title': 'Federico - О нас',
         'content': 'Информация о магазине',
-        'text': 'Текст'
+        'text': 'Текст...'
     }
     return render(request, 'main/about.html', context)
 
