@@ -1,28 +1,35 @@
 from django.db import models
 
 
-class Category(models.Model):
+class Categories(models.Model):
     name = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
 
     class Meta:
-        db_table = 'category'
+        db_table = 'categories'
+
+    def __str__(self):
+        return self.name
 
 
-class Product(models.Model):
-    slug = models.SlugField()
-    name = models.CharField(max_length=255)
+
+class Products(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='goods_images', blank=True, null=True)
     quantity = models.PositiveIntegerField(default=0)
     price = models.DecimalField(default=0.00, max_digits=7, decimal_places=2, )
-    discount = models.DecimalField(default=0.00, max_digits=7, decimal_places=2)
+    discount = models.DecimalField(default=0.00, max_digits=4, decimal_places=2)
     promotion = models.BooleanField(default=False)
 
-    category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(to=Categories, on_delete=models.CASCADE)
 
     class Meta:
-        db_table = 'product'
+        db_table = 'products'
+
+    def __str__(self):
+        return self.name
 
 
 # class Users(models.Model):

@@ -1,0 +1,1 @@
+[{"model": "goods.categories", "pk": 1, "fields": {"name": "Все товары", "slug": "all"}}, {"model": "goods.categories", "pk": 2, "fields": {"name": "Электроника", "slug": "elektronika"}}, {"model": "goods.categories", "pk": 3, "fields": {"name": "Кухонные приборы", "slug": "kuhonnye-pribory"}}]
