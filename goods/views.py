@@ -1,18 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from goods.models import Products
+
 
 def catalog(request) -> HttpResponse:
+
+    goods = Products.objects.all()
+
     context: dict = {
         'title': 'Каталог',
-        'goods': [
-            {
-        'name': 'Название товара',
-        'description': 'Описание',
-        'image': '',
-        'price': 150
-    }
-        ],
+        'goods': goods,
     }
 
     return render(request, 'goods/catalog.html', context)
