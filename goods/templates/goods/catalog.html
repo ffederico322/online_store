@@ -2,33 +2,40 @@
 {% load static %}
 
 {% block css %}
-	    <link rel="stylesheet" href="{% static 'goods/style.css' %}">
+    <link rel="stylesheet" href="{% static 'goods/style.css' %}">
 {% endblock %}
 
 {% block content %}
-<main>
-        <h1>Каталог товаров</h1>
-        <section class="categories">
-            <h2>Категории</h2>
-            <ul>
-                <li><a href="#">Категория 1</a></li>
-                <li><a href="#">Категория 2</a></li>
-                <li><a href="#">Категория 3</a></li>
-                <li><a href="#">Категория 4</a></li>
-            </ul>
-        </section>
+<main style="display: flex;">
+    <aside class="categories">
+        <h2>Категории</h2>
+        <ul>
+            {% for category in categories %}
+                <li><a href="#">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
 
-        <section class="products">
-            <h2>Товары</h2>
-            <div class="product-list">
-                {% for product in goods %}
-            	    <div class="product">
-                        <img src="https://via.placeholder.com/150" alt="Товар 1">
-                        <h3>{{ product.name }}</h3>
-                        <p>{{ product.price }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
+    <section class="products">
+        <h2>Товары</h2>
+        <div class="product-list">
+            {% for product in goods %}
+                <div class="product">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="https://via.placeholder.com/150" alt="">
+                    {% endif %}
+                    <h3>{{ product.name }}</h3>
+                    {% if product.discount %}
+                        <p>{{ product.sell_price }}</p>
+                        <p>скидка {{ product.discount }} %</p>
+                    {% else %}
+                        <p>{{ product.price }} руб.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
 {% endblock %}

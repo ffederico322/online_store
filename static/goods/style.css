@@ -70,11 +70,13 @@ header {
 }
 
 main {
+    display: flex;
     padding: 20px;
 }
 
 .categories {
-    margin-bottom: 30px;
+    width: 200px; /* Ширина для бокового меню */
+    margin-right: 20px; /* Отступ между категориями и товарами */
 }
 
 .categories ul {
@@ -93,25 +95,26 @@ main {
 }
 
 .products {
-    margin-bottom: 50px;
+    flex: 1; /* Занимает оставшееся пространство */
 }
 
 .product-list {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px; /* Отступ между товарами */
 }
 
 .product {
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
-    width: 200px;
+    width: calc(25% - 20px); /* 25% ширины для 4 товаров в ряд с учетом отступа */
+    box-sizing: border-box; /* Включаем отступы и границы в расчет ширины */
 }
 
 .product img {
-    width: 150px;
-    height: 150px;
+    width: 100%; /* Адаптация ширины изображения */
+    height: auto; /* Автоматическая высота */
     object-fit: cover;
     margin-bottom: 10px;
 }
@@ -131,7 +134,26 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+    .product {
+        width: calc(33.33% - 20px); /* 3 товара в ряд на средних экранах */
+    }
+}
+
+@media (max-width: 800px) {
+    .product {
+        width: calc(50% - 20px); /* 2 товара в ряд на меньших экранах */
+    }
+}
+
+@media (max-width: 500px) {
+    .product {
+        width: 100%; /* 1 товар в ряд на мобильных экранах */
+    }
 }
