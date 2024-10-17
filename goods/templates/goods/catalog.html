@@ -26,7 +26,9 @@
                     {% else %}
                         <img src="https://via.placeholder.com/150" alt="">
                     {% endif %}
-                    <h3>{{ product.name }}</h3>
+                    <a href="{% url 'catalog:product' product.slug %}">
+                        <h3>{{ product.name }}</h3>
+                    </a>
                     {% if product.discount %}
                         <p>{{ product.sell_price }}</p>
                         <p>скидка {{ product.discount }} %</p>

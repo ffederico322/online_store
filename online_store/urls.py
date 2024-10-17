@@ -25,7 +25,7 @@ from online_store.settings import DEBUG
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls', namespace='main')),
-    path('catalog', include('goods.urls', namespace='goods')),
+    path('catalog/', include('goods.urls', namespace='catalog')),
 
 ] + debug_toolbar_urls()
 
