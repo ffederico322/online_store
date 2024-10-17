@@ -1,9 +1,11 @@
+/* Основной стиль для тела документа */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Стили для header */
 header {
     background-color: #333;
     padding: 10px;
@@ -16,6 +18,7 @@ header {
     justify-content: space-between;
 }
 
+/* Стили для навигации */
 .navbar {
     list-style-type: none;
     margin: 0;
@@ -34,26 +37,30 @@ header {
     font-size: 16px;
 }
 
+/* Стили для выпадающего меню */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
+/* Выпадающее меню по умолчанию скрыто */
 .dropdown-menu {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     list-style-type: none;
     padding: 10px;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+/* Стили для отображения меню */
+.dropdown-menu.show {
+    display: block; /* Показываем меню, когда добавляется класс 'show' */
 }
 
+/* Стили для элементов выпадающего меню */
 .dropdown-menu li {
     margin-bottom: 5px;
 }
@@ -63,6 +70,7 @@ header {
     text-decoration: none;
 }
 
+/* Стили для формы поиска */
 .search-form {
     display: flex;
 }
@@ -78,10 +86,12 @@ header {
     cursor: pointer;
 }
 
+/* Стили для основного контента */
 main {
     padding: 20px;
 }
 
+/* Стили для footer */
 footer {
     background-color: #333;
     color: white;

@@ -11,7 +11,7 @@
         <h2>Категории</h2>
         <ul>
             {% for category in categories %}
-                <li><a href="#">{{ category.name }}</a></li>
+                <li><a href="{% url 'catalog:index' category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
     </aside>
